@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SynapseGPT - Emotion Chat</title>
+    <title>SynapseGPT - AI Emotion Chat</title>
     <style>
         body {
             text-align: center;
@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    <h1>SynapseGPT - Emotion-Based Chat</h1>
+    <h1>SynapseGPT - AI Emotion Chat</h1>
     <label for="emotion">Select Your Emotion:</label>
     <select id="emotion">
         <option value="happy">Happy</option>
@@ -41,7 +41,7 @@
     <script>
         async function sendEmotion() {
             const emotion = document.getElementById("emotion").value;
-            const response = await fetch("http://127.0.0.1:5000/emotion", {
+            const response = await fetch("http://127.0.0.1:5000/emotion", { // Change to your public API URL after deployment
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ emotion })
@@ -50,7 +50,7 @@
             
             document.body.style.backgroundColor = data.color;
             document.getElementById("color-display").style.backgroundColor = data.color;
-            document.getElementById("emotion-output").innerText = `${data.poetic_response} \n Music: ${data.music}`;
+            document.getElementById("emotion-output").innerText = `${data.poetic_response}`;
         }
     </script>
 </body>
